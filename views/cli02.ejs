@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <div class="containerHead">
+        <p> AUTOMAÇÃO IoT - Cloud Template - Cliente02 </p>
+        <button id="retorno" onclick="retorno()">Voltar</button>
+        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel='stylesheet' href='/stylesheets/stylecli.css' />
+
+</head>
+<body>
+    <div class="containerForm">
+        <form>
+            <input type="button" value="Simulate">
+        </form>
+    </div>
+    <div class="containerSensores">
+        <form action="/action_page.php">
+          <div id="SensorA" class="sensores" onload="showValue()"></div> 
+          <label for="Sensor">Canal 1:</label>
+          <br>
+          <meter id="canal1" value="0.15">95%</meter>
+          <label id="Medida1">0.15</label>
+          <br>
+          <br>
+        
+          <label for="Sensor">Canal 2:</label>
+          <br>
+          <meter id="canal2" value="0.15">95%</meter>
+          <label id="Medida2">0.15</label>
+          <br>
+          <br>
+         
+          <label for="Sensor">Canal 3:</label>
+          <br>
+          <meter id="canal3" value="0.15">95%</meter>
+          <label id="Medida3">0.15</label>
+          <br>
+          <br> 
+          
+        </form>
+        <br>
+        <br>
+        </div>
+        </div>
+        
+        <div class="containerButtons">
+                
+                <div class="switch-holder">
+                    <div class="switch-label">
+                        <i class="fa fa-bluetooth-b"></i><span>Canal 4</span>
+                    </div>
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="canal4" onclick="ch4()">
+                        <label for="canal4"></label>
+                    </div>
+                </div>
+        
+                <div class="switch-holder">
+                    <div class="switch-label">
+                        <i class="fa fa-wifi"></i><span>Canal 5</span>
+                    </div>
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="canal5" onclick="ch5()">
+                        <label for="canal5"></label>
+                    </div>
+                </div>
+        
+                <div class="switch-holder">
+                    <div class="switch-label">
+                        <i class="fa fa-map-marker"></i></i><span>Canal 6</span>
+                    </div>
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="canal6" onclick="ch6()">
+                        <label for="canal6"></label>
+                    </div>
+                </div>
+        </div>
+        
+
+        
+        <div id="container" style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto"></div>
+        
+        <!-- Cliente JS PAHO -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+        <script src="javascripts/cli.js"></script>
+
+</body>
+
+<script>
+	function retorno() {
+	window.location.href = "./";
+	}
+    const button = document.querySelector('input');
+    button.addEventListener('click', updateButton);
+
+    function updateButton() {
+        if (button.value === 'Simulate') {
+            button.value = 'Stop';
+            simulateInputs();
+        } else {
+            button.value = 'Simulate';
+            clearInterval(intervalHandler);
+        }
+    }
+</script>
+
+</html>
