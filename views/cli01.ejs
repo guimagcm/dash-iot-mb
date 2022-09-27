@@ -8,10 +8,15 @@
 
     <div class="containerHead">
         <p> IoT - Modbus</p>
-        <button id="retorno" onclick="retorno()">Voltar</button>
-        </div>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <link rel='stylesheet' href='/stylesheets/stylecli.css' />
+    </div>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel='stylesheet' href='/stylesheets/stylecli.css' />
+    <link href='https://fonts.googleapis.com/css?family=Vibur:400' rel='stylesheet' type='text/css'>
+
+    <div class="containerBotVoltar">
+        <button class="retorno" onclick="retorno()">Voltar</button>
+    </div>
 
 </head>
 <body>
@@ -22,6 +27,9 @@
     </div>
     <div class="containerSensores">
         <form action="/action_page.php">
+        <label>Analog Input - ESP32-Modbus</label>
+        <br>
+        <br>
           <div id="SensorA" class="sensores"></div> 
           <label for="Sensor">Canal 1:</label>
           <br>
@@ -51,23 +59,34 @@
         </div>
 
         <div class="containerSliders">
-            <label id="sldlabel">Output to ESP32</label>
+            <label id="sldlabel">Analog Output to ESP32-Modbus</label>
+            <br>
+            <br>
             <div>
                 <label>Canal 4:</label>
-                <input id="slider1" type="range" value="100" min="1" max="100">
+                <br>
+                <input class="slider" id="slider1" type="range" value="100" min="1" max="100" width="25">
                 <label id="sld1">100</label>
+                <br>
+                <br>
             </div>            
             
             <div>
                 <label>Canal 5:</label>
-                <input id="slider2" type="range" value="100" min="1" max="100">
+                <br>
+                <input class="slider" id="slider2" type="range" value="100" min="1" max="100">
                 <label id="sld2">100</label>
+                <br>
+                <br>
             </div>  
 
             <div>
                 <label>Canal 6:</label>
-                <input id="slider3" type="range" value="100" min="1" max="100">
+                <br>
+                <input class="slider" id="slider3" type="range" value="100" min="1" max="100">
                 <label id="sld3">100</label>
+                <br>
+                <br>
             </div>  
 
         </div>
@@ -78,35 +97,52 @@
                 
                 <div class="switch-holder">
                     <div class="switch-label">
-                        <i class="fa fa-bluetooth-b"></i><span>Canal 4</span>
+                        <i class="fa-brands fa-old-republic"></i><span>Canal 7</span>
                     </div>
                     <div class="switch-toggle">
-                        <input type="checkbox" id="canal4" onclick="ch4()">
-                        <label for="canal4"></label>
+                        <input type="checkbox" id="canal7" onclick="ch7()">
+                        <label for="canal7"></label>
                     </div>
                 </div>
         
                 <div class="switch-holder">
                     <div class="switch-label">
-                        <i class="fa fa-wifi"></i><span>Canal 5</span>
+                        <i class="fa-brands fa-rebel"></i><span>Canal 8</span>
                     </div>
                     <div class="switch-toggle">
-                        <input type="checkbox" id="canal5" onclick="ch5()">
-                        <label for="canal5"></label>
+                        <input type="checkbox" id="canal8" onclick="ch8()">
+                        <label for="canal8"></label>
                     </div>
                 </div>
         
                 <div class="switch-holder">
                     <div class="switch-label">
-                        <i class="fa fa-map-marker"></i></i><span>Canal 6</span>
+                        <i class="fa-brands fa-rebel"></i></i><span>Canal 9</span>
                     </div>
                     <div class="switch-toggle">
-                        <input type="checkbox" id="canal6" onclick="ch6()">
-                        <label for="canal6"></label>
+                        <input type="checkbox" id="canal9" onclick="ch9()">
+                        <label for="canal9"></label>
                     </div>
                 </div>
         </div>
         
+        <div class="containerLeds">
+            <label color="white">Digital Output - Leds</label>
+            <h1 class="neonText">
+                Canal 10
+            </h1>
+            <br>
+            <br>
+            <h1 class="neonText">
+                Canal 11
+            </h1>
+            <br>
+            <br>
+            <h1 class="neonText">
+                Canal 12
+            </h1>
+
+        </div>
 
         
         <div id="container" style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto"></div>

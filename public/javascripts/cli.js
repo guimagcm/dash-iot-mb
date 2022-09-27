@@ -83,21 +83,6 @@ function onMessageArrived(message) {
       document.getElementById('canal3').value = reading;
       document.getElementById('Medida3').innerText = reading;
     break;
-	  case "dash/canal7":
-      reading = message.payloadString;
-      document.getElementById('canal1').value = reading;
-      document.getElementById('Medida1').innerText = reading;
-    break;
-	  case "dash/canal8":
-      reading = message.payloadString;
-      document.getElementById('canal2').value = reading;
-      document.getElementById('Medida2').innerText = reading;
-    break;
-	  case "dash/canal9":
-      reading = message.payloadString;
-      document.getElementById('canal3').value = reading;
-      document.getElementById('Medida3').innerText = reading;
-    break;
 	default:
 		// code block
 	}
@@ -111,6 +96,9 @@ function onMessageArrived(message) {
       
   slide1.onchange = function() {
       sliderDiv1.innerHTML = this.value;
+      message = new Paho.MQTT.Message(String(this.value));
+		  message.destinationName = "dash/canal4";
+		  client.send(message);
   }
 
   var slide2 = document.getElementById('slider2'),
@@ -118,6 +106,9 @@ function onMessageArrived(message) {
       
   slide2.onchange = function() {
       sliderDiv2.innerHTML = this.value;
+      message = new Paho.MQTT.Message(String(this.value));
+		  message.destinationName = "dash/canal5";
+		  client.send(message);
   }
 
   var slide3 = document.getElementById('slider3'),
@@ -125,52 +116,55 @@ function onMessageArrived(message) {
       
   slide3.onchange = function() {
       sliderDiv3.innerHTML = this.value;
+      message = new Paho.MQTT.Message(String(this.value));
+		  message.destinationName = "dash/canal6";
+		  client.send(message);
   }
 
 
 // Output Channels
-function ch4() {
+function ch7() {
   // Get the checkbox
-  var checkBox = document.getElementById("canal4");
+  var checkBox = document.getElementById("canal7");
   // If the checkbox is checked, display the output text
   if (checkBox.checked == false){
 		message = new Paho.MQTT.Message("0");
-		message.destinationName = "dash/canal4";
+		message.destinationName = "dash/canal7";
 		client.send(message);
   } else {
 	  	message = new Paho.MQTT.Message("1");
-		message.destinationName = "dash/canal4";
+		message.destinationName = "dash/canal7";
 		client.send(message);
   }
 }
 
-function ch5() {
+function ch8() {
   // Get the checkbox
-  var checkBox = document.getElementById("canal5");
+  var checkBox = document.getElementById("canal8");
   // If the checkbox is checked, display the output text
   if (checkBox.checked == false){
 		message = new Paho.MQTT.Message("0");
-		message.destinationName = "dash/canal5";
+		message.destinationName = "dash/canal8";
 		client.send(message);
   } else {
 	  	message = new Paho.MQTT.Message("1");
-		message.destinationName = "dash/canal5";
+		message.destinationName = "dash/canal8";
 		client.send(message);
     
   }
 }
 
-function ch6() {
+function ch9() {
   // Get the checkbox
-  var checkBox = document.getElementById("canal6");
+  var checkBox = document.getElementById("canal9");
   // If the checkbox is checked, display the output text
   if (checkBox.checked == false){
 		message = new Paho.MQTT.Message("0");
-		message.destinationName = "dash/canal6";
+		message.destinationName = "dash/canal9";
 		client.send(message);
   } else {
 	  	message = new Paho.MQTT.Message("1");
-		message.destinationName = "dash/canal6";
+		message.destinationName = "dash/canal9";
 		client.send(message);
     
   }
