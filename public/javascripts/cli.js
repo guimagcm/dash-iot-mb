@@ -103,6 +103,31 @@ function onMessageArrived(message) {
 	}
 }
 
+// Output Sliders Show Value 
+//document.getElementById('slider1').value = reading;
+//document.getElementById('sld11').innerText = reading;
+  var slide1 = document.getElementById('slider1'),
+      sliderDiv1 = document.getElementById('sld1');
+      
+  slide1.onchange = function() {
+      sliderDiv1.innerHTML = this.value;
+  }
+
+  var slide2 = document.getElementById('slider2'),
+      sliderDiv2 = document.getElementById('sld2');
+      
+  slide2.onchange = function() {
+      sliderDiv2.innerHTML = this.value;
+  }
+
+  var slide3 = document.getElementById('slider3'),
+      sliderDiv3 = document.getElementById('sld3');
+      
+  slide3.onchange = function() {
+      sliderDiv3.innerHTML = this.value;
+  }
+
+
 // Output Channels
 function ch4() {
   // Get the checkbox

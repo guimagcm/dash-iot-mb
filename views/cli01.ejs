@@ -7,7 +7,7 @@
     <title>Document</title>
 
     <div class="containerHead">
-        <p> AUTOMAÇÃO IoT - Cloud Template - Cliente01 </p>
+        <p> IoT - Modbus</p>
         <button id="retorno" onclick="retorno()">Voltar</button>
         </div>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -22,7 +22,7 @@
     </div>
     <div class="containerSensores">
         <form action="/action_page.php">
-          <div id="SensorA" class="sensores" onload="showValue()"></div> 
+          <div id="SensorA" class="sensores"></div> 
           <label for="Sensor">Canal 1:</label>
           <br>
           <meter id="canal1" value="0.15">95%</meter>
@@ -49,6 +49,30 @@
         <br>
         </div>
         </div>
+
+        <div class="containerSliders">
+            <label id="sldlabel">Output to ESP32</label>
+            <div>
+                <label>Canal 4:</label>
+                <input id="slider1" type="range" value="100" min="1" max="100">
+                <label id="sld1">100</label>
+            </div>            
+            
+            <div>
+                <label>Canal 5:</label>
+                <input id="slider2" type="range" value="100" min="1" max="100">
+                <label id="sld2">100</label>
+            </div>  
+
+            <div>
+                <label>Canal 6:</label>
+                <input id="slider3" type="range" value="100" min="1" max="100">
+                <label id="sld3">100</label>
+            </div>  
+
+        </div>
+
+        
         
         <div class="containerButtons">
                 
