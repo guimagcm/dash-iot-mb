@@ -26,9 +26,9 @@ function onConnect() {
   // Once a connection has been made, subscribe to channels
   console.log("onConnect");
 
-  // Recursive function for subscribing to 6 channels
+  // Recursive function for subscribing to 18 channels
   function subscribeRecursion(i) {
-    if (i==13) return i;
+    if (i==19) return i;
     client.subscribe('dash/canal'+String(i));
     subscribeRecursion(i+1)
   }
