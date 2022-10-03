@@ -5,7 +5,7 @@ client = new Paho.MQTT.Client("broker.emqx.io", Number(8084), "guima10");
 // connection options - for EMQX - these data are enough, even using wss / ssl
 var options = {
 	useSSL: true,
-  userName : "guima10",
+  userName : "guima10"+String(Math.floor(Math.random() * 100)),
   password : "teste123",
   onSuccess: onConnect,
     };
