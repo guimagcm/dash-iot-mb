@@ -78,6 +78,13 @@ meter{
    
 }
 
+.containerButtons2{
+    position: absolute;
+    top: 500px;
+    left: 350px;
+   
+}
+
 .containerLeds{
     border: 3px solid #979797;
     border-radius: 10px;

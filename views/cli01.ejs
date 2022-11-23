@@ -7,7 +7,7 @@
     <title>Document</title>
 
     <div class="containerHead">
-        <p> IoT - Modbus</p>
+        <p> IoT - Modbus - Cassio</p>
     </div>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -27,11 +27,11 @@
     </div>
     <div class="containerSensores">
         <form action="/action_page.php">
-        <label>Analog Input - ESP32-Modbus</label>
+        <label>Entrada Analog vinda ESP32</label>
         <br>
         <br>
           <div id="SensorA" class="sensores"></div> 
-          <label for="Sensor">Canal 1:</label>
+          <label for="Sensor">Ch 1 - Ultrasonic:</label>
           <br>
           <meter id="canal1" value="0.15">95%</meter>
           <label id="Medida1">0.15</label>
@@ -59,7 +59,7 @@
         </div>
 
         <div class="containerSliders">
-            <label id="sldlabel">Analog Output to ESP32-Modbus</label>
+            <label id="sldlabel">Saida Analog para ESP32-Modbus</label>
             <br>
             <br>
             <div>
@@ -94,7 +94,9 @@
         
         
         <div class="containerButtons">
-                
+            <label id="sldlabel">Saida Dig para CLP Modbus</label>
+            <br>
+            <br>
                 <div class="switch-holder">
                     <div class="switch-label">
                         <i class="fa-brands fa-old-republic"></i><span>Canal 7</span>
@@ -126,22 +128,39 @@
                 </div>
         </div>
         
-        <div class="containerLeds">
-            <label color="white">Digital Output - Leds</label>
-            <h1 class="neonText">
-                Canal 10
-            </h1>
+        <div class="containerButtons2">
+            <label id="sldlabel">Entrada Dig vinda CLP Modbus</label>
             <br>
             <br>
-            <h1 class="neonText">
-                Canal 11
-            </h1>
-            <br>
-            <br>
-            <h1 class="neonText">
-                Canal 12
-            </h1>
-
+                <div class="switch-holder">
+                    <div class="switch-label">
+                        <i class="fa-brands fa-old-republic"></i><span>Canal 10</span>
+                    </div>
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="canal10" onclick="ch10()">
+                        <label for="canal10"></label>
+                    </div>
+                </div>
+        
+                <div class="switch-holder">
+                    <div class="switch-label">
+                        <i class="fa-brands fa-rebel"></i><span>Canal 11</span>
+                    </div>
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="canal11" onclick="ch11()">
+                        <label for="canal11"></label>
+                    </div>
+                </div>
+        
+                <div class="switch-holder">
+                    <div class="switch-label">
+                        <i class="fa-brands fa-rebel"></i></i><span>Canal 12</span>
+                    </div>
+                    <div class="switch-toggle">
+                        <input type="checkbox" id="canal12" onclick="ch12()">
+                        <label for="canal12"></label>
+                    </div>
+                </div>
         </div>
 
         
